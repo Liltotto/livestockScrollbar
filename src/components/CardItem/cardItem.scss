@@ -2,6 +2,12 @@
     max-width: 344px;
     flex-shrink: 0;
 
+    transition: 1s max-width ease-in-out;
+
+    // &:hover{
+    //     transform: scaleX(2);
+    // }
+
     &:hover{
         .cardItem__title{
             transition: 0.3s all;
@@ -47,3 +53,12 @@
         /* 100% */
     }
 }
+
+// @keyframes changeWidthAnimation{
+//     from{
+//         max-width: 344px;
+//     }
+//     to{
+//         max-width: 688px;
+//     }
+// }

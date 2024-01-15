@@ -15,7 +15,9 @@ export default function CardList({ mockData }) {
 
 	const [isActiveRightArrow, setIsActiveRightArrow] = useState(true)
 
-	const [isActiveLeftArrow, setIsActiveLeftArrow] = useState(true)
+	const [isActiveLeftArrow, setIsActiveLeftArrow] = useState(false)
+
+	const [blockActiveArrow, setBlockActiveArrow] = useState(false)
 
 	//const [activeClassLeft, setActiveClassRight] = useState(null)
 
@@ -47,7 +49,7 @@ export default function CardList({ mockData }) {
 	  }, []);
 
 	const handleScroll = () => {
-
+		
 		const scrollWidth = cardListRef.current.scrollWidth;
 		const clientWidth = cardListRef.current.clientWidth;
 		const scrollLeft = cardListRef.current.scrollLeft;
@@ -85,9 +87,13 @@ export default function CardList({ mockData }) {
 	}
 
 	const clickHandler = (e) => {
-
+		
 		if (e.currentTarget.classList.contains('scrollbar-left__arrow')) {
-
+			
+			//setIsActiveLeftArrow(false)
+			// setTimeout(() => {
+			// 	setIsActiveLeftArrow(true)
+			// }, 1000)
 			cardListRef.current.scrollBy({
 				top: 0,
 				left: -currentWidthOfItems,
@@ -96,7 +102,10 @@ export default function CardList({ mockData }) {
 		}
 
 		else if (e.currentTarget.classList.contains('scrollbar-right__arrow')) {
-
+			//setIsActiveRightArrow(false)
+			// setTimeout(() => {
+			// 	setIsActiveRightArrow(true)
+			// }, 1000)
 			cardListRef.current.scrollBy({
 				top: 0,
 				left: currentWidthOfItems,

@@ -5,7 +5,7 @@
     .listOfCardItem {
         display: flex;
         max-height: 453px;
-        overflow-x: auto;
+        overflow-x: hidden;
         overflow-y: hidden;
         padding-bottom: 28px;
         scroll-behavior: smooth;
