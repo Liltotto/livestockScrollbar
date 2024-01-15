@@ -1,6 +1,39 @@
-.cardList{
-    display: flex; 
-    max-height: 453px;
-    overflow-x: auto;
-    padding-bottom: 28px;
+.cardList {
+    display: flex;
+    flex-direction: column;
+
+    .listOfCardItem {
+        display: flex;
+        max-height: 453px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 28px;
+        scroll-behavior: smooth;
+    }
+
+    .scrollbar-arrows {
+        display: flex;
+        justify-content: space-between;
+        margin: 12px;
+
+        .scrollbar-left__arrow {
+            transform: rotate(180deg);
+        }
+
+        button {
+            background-color: white;
+            border: 0;
+
+            .arrow_icon {
+                width: 173px;
+                height: 23px;
+                display: block;
+                background: url('../../assets/arrowInactive.svg') center center / cover no-repeat;
+
+                &.active {
+                    background-image: url('../../assets/arrowActive.svg');
+                }
+            }
+        }
+    }
 }

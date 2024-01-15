@@ -1,6 +1,14 @@
 .cardItem {
     max-width: 344px;
     flex-shrink: 0;
+
+    &:hover{
+        .cardItem__title{
+            transition: 0.3s all;
+            color: var(--Emerald, #4FBA67);
+        }
+    }
+
     img {
         width: 100%;
         height: 100%;
@@ -14,6 +22,7 @@
 
     &__title {
         margin-top: 32px;
+        cursor: pointer;
         color: var(--grey-dark, var(--grey-dark, #525C7A));
         /* H4 */
         font-family: Raleway;

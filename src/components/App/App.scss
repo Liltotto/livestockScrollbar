@@ -1,4 +1,38 @@
 .App {
-  
-}
+    margin: 0 auto;
+    width: 1440px;
+    padding: 128px 0px 98px 0px;
+    
 
+    .titleAndDescr {
+        width: 859px;
+        padding: 0px 8px;
+
+        h1 {
+            color: var(--grey-medium-dark, #7884A5);
+            leading-trim: both;
+
+            text-edge: cap;
+            /* H1 */
+            font-family: Raleway;
+            font-size: 72px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 70px;
+            /* 97.222% */
+            letter-spacing: -0.576px;
+        }
+
+        h2 {
+            color: var(--Black, #292E3D);
+            /* Body */
+            font-family: Raleway;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+            /* 133.333% */
+        }
+    }
+
+}

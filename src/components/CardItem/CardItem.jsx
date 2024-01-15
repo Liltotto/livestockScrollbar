@@ -1,47 +1,42 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './cardItem.module.scss'
 import './cardItem.scss'
 
-export default function CardItem({img, title, date}) {
+export default function CardItem({img, title, date, lastItemClass, changeLastItem, changeCurrentWidthOfItems}) {
   
   const [width, setWidth] = useState(null)
 
   const cardRef = useRef(null)
 
+  if(lastItemClass === 'circleContainer') {
+		delete styles['circleContainer']
+  }
+
   const allClasses = Object.keys(styles)
 
-  var randomIndex = Math.floor(Math.random() * 5);
+
+  const randomIndex = useMemo(()=>Math.floor(Math.random() * allClasses.length), [])
 
   const container = allClasses[randomIndex]
 
+  
 
   useEffect(() => {
+    changeLastItem(container)
     if (cardRef.current) {
-      setWidth(cardRef.current.offsetWidth);
+      setWidth(cardRef.current.offsetWidth)
+      changeCurrentWidthOfItems(cardRef.current.offsetWidth)
+      if(title.length > 25) doubleWidth()
     }
-
-	if(title.length > 25) doubleWidth()
+    
+	  
   }, []);
 
   const doubleWidth = () => {
     setWidth((prevWidth) => prevWidth * 2);
   };
-
-//   const doubleWidth = (e) => {
-// 		console.log(e.style.target.width);
-// 		return e.style.target.maxWidth *= 2
-//   }
-
-//   const currentWidth = (e) => {
-// 		console.log(e.style.target.width);
-// 		return e.target.style.maxWidth
-// }
-
+ 
   
-
-
-  console.log(width);
-  //width = title.length > 25
 
   return (
     <div ref={cardRef} className="cardItem" style={{maxWidth: width}}>
